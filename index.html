@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVYR Digital | Premium Digital Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepNavy: '#011C40',
+                        cyanAccent: '#A7EBF2',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="antialiased selection:bg-[#A7EBF2] selection:text-[#011C40]"
+    style="background-color: #010b19; color: white; font-family: 'Montserrat', sans-serif;">
+
+    <!-- Floating Background Orbs -->
+    <div class="glow-orb orb-1" style="opacity: 0.3;"></div>
+    <div class="glow-orb orb-2" style="opacity: 0.3;"></div>
+
+    <!-- Canvas for Option A: Digital Pulse -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <!-- New Fixed Navigation -->
+        <nav class="navbar">
+            <a href="#" class="logo">AVYR</a>
+            <div class="nav-links hidden md:flex">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#capabilities" class="nav-link">Services</a>
+                <a href="#collections" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Icon could go here -->
+        </nav>
+
+        <div class="hero-container">
+            <h1 class="hero-headline">
+                Beauty is the interface.<br>Code is the pulse.
+            </h1>
+            <p class="hero-subheadline">
+                Digital Architecture for the Modern Vanguard.
+            </p>
+            <div>
+                <a href="#contact" class="hero-cta">
+                    [ Enter The Maison ]
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-24 px-4 md:px-12 relative">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <!-- Signal Line -->
+            <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#A7EBF2] to-transparent"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl mb-6" style="font-family: 'Playfair Display', serif;">We do not
+                        build websites.<br>We construct digital sanctuaries.</h2>
+                    <p class="text-gray-400 font-light leading-loose">
+                        The first interaction with your brand is no longer physical; it is digital. We forge bespoke environments where design meets function, ensuring your digital front door reflects the excellence of the business behind it.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-xl md:text-2xl font-serif italic text-white/90">
+                        "We translate noise into nuance."
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="h-[1px] w-12 bg-[#A7EBF2]"></div>
+                        <span class="uppercase tracking-widest text-xs text-[#A7EBF2]">The AVYR Standard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section (formerly Services) -->
+    <section id="capabilities" class="py-24 px-4 md:px-12 bg-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16">
+                <span class="text-[#A7EBF2] uppercase tracking-widest text-xs block mb-4">Expertise</span>
+                <h2 class="text-4xl md:text-5xl" style="font-family: 'Playfair Display', serif;">THE CAPABILITIES.</h2>
+            </div>
+
+            <!-- Services List Flexbox -->
+            <div class="flex flex-col md:flex-row justify-between gap-12">
+                <!-- Service 1 -->
+                <div class="group flex-1 space-y-4">
+                    <span
+                        class="text-5xl text-white/10 group-hover:text-[#A7EBF2]/20 transition-colors duration-500 font-serif">01</span>
+                    <h3 class="text-2xl font-medium group-hover:text-[#A7EBF2] transition-colors duration-300"
+                        style="font-family: 'Playfair Display', serif;">DIGITAL ARCHITECTURE</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                        We reject generic templates. We code your website from scratch to ensure it is lightning-fast,
+                        secure, and works perfectly on every mobile device.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group flex-1 space-y-4">
+                    <span
+                        class="text-5xl text-white/10 group-hover:text-[#A7EBF2]/20 transition-colors duration-500 font-serif">02</span>
+                    <h3 class="text-2xl font-medium group-hover:text-[#A7EBF2] transition-colors duration-300"
+                        style="font-family: 'Playfair Display', serif;">EXPERIENCE DESIGN (UI/UX)</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                        We design websites that feel intuitive and build instant trust. We ensure your visitors can find
+                        exactly what they need, effortlessly converting them from browsers into clients.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group flex-1 space-y-4">
+                    <span
+                        class="text-5xl text-white/10 group-hover:text-[#A7EBF2]/20 transition-colors duration-500 font-serif">03</span>
+                    <h3 class="text-2xl font-medium group-hover:text-[#A7EBF2] transition-colors duration-300"
+                        style="font-family: 'Playfair Display', serif;">
+                        THE PULSE (SEO & Strategy)</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                       A beautiful website is useless if it cannot be found. We optimize your site to appear at the top
+                        of search results, ensuring high-value clients see you first.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section (formerly Pricing) -->
+    <section id="collections" class="py-24 px-4 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl" style="font-family: 'Playfair Display', serif;">THE COLLECTIONS.</h2>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div
+                    class="collection-card border border-white/10 p-8 flex flex-col justify-between group relative bg-[#011C40]">
+                    <div>
+                        <h3 class="text-3xl font-heading mb-2 group-hover:text-[#A7EBF2] transition-colors"
+                            style="font-family: 'Playfair Display', serif;">THE GENESIS</h3>
+                        <p
+                            class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
+                            The Foundation.</p>
+                        <p class="text-lg text-gray-300 font-light leading-relaxed">
+                             A singular, high-impact digital presence designed to convert instantly.
+                        </p>
+                        <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>One-Page Scroll Journey
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Mobile-First Engineering
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Essential SEO</li>
+
+                        </ul>
+                        <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Starting at 1500 DH</div>
+                        <button onclick="selectPack('The Genesis')" class="card-select-btn">CHOOSE THE GENESIS</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Featured) -->
+                <div
+                    class="collection-card featured border border-[#A7EBF2] p-8 flex flex-col justify-between relative bg-white/5 transform md:-translate-y-4 shadow-[0_0_30px_rgba(167,235,242,0.05)]">
+                    <div
+                        class="absolute top-0 right-0 bg-[#A7EBF2] text-[#011C40] text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                        RECOMMENDED</div>
+                    <div>
+                        <h3 class="text-3xl font-heading mb-2 text-[#A7EBF2]"
+                            style="font-family: 'Playfair Display', serif;">THE ASCENSION</h3>
+                        <p
+                            class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
+                            The Standard.</p>
+                        <p class="text-lg text-gray-300 font-light leading-relaxed">
+                            A complete, multi-page ecosystem that builds deep authority.
+                        </p>
+                        <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>5-Page Custom Architecture
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Interactive Gallery</li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Booking Integration</li>
+
+                        </ul>
+                        <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Starting at 2500 DH</div>
+                        <button onclick="selectPack('The Ascension')" class="card-select-btn featured-btn">CHOOSE THE
+                            ASCENSION</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="collection-card border border-white/10 p-8 flex flex-col justify-between group bg-[#011C40]">
+                    <div>
+                        <h3 class="text-3xl font-heading mb-2 group-hover:text-[#A7EBF2] transition-colors"
+                            style="font-family: 'Playfair Display', serif;">THE APEX
+                        </h3>
+                        <p
+                            class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
+                            The Legacy.</p>
+                        <p class="text-lg text-gray-300 font-light leading-relaxed">
+                            Total digital dominance. A bespoke partnership acting as your internal team.
+                        </p>
+                        <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Unlimited Custom Pages
+                            </li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>E-Commerce</li>
+                            <li class="flex items-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Concierge Maintenance</li>
+
+                        </ul>
+                        <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Starting at 5000 DH</div>
+                        <button onclick="selectPack('The Apex')" class="card-select-btn">CHOOSE
+                            THE APEX</button>
+                    </div>
+                </div>
+
+                <!-- NEW: Custom Solutions Element -->
+                <div class="custom-solution-card">
+                    <h3>NEED MORE?</h3>
+                    <p class="text-gray-300 font-light mb-4">
+                        Complex Web Applications, Bespoke E-commerce, or Large-Scale Portals.
+                    </p>
+                    <a href="#contact" onclick="clearPack()"
+                        class="text-sm uppercase tracking-widest text-[#A7EBF2] hover:text-white transition-colors border-b border-[#A7EBF2] pb-1">
+                        Contact for Custom Quote
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Contact Section (Split Layout) -->
+    <section id="contact" class="py-24 px-4 md:px-12 bg-gradient-to-b from-[#011C40] to-black relative">
+        <div class="contact-split-container">
+
+            <!-- Left Column: Info -->
+            <div class="contact-info-col">
+                <h2 style="font-family: 'Playfair Display', serif;">Let's Discuss Your Project</h2>
+                <p class="text-gray-400 font-light">
+                    We are ready to take your business to the next level of digital excellence.
+                </p>
+
+                <div class="contact-info-items">
+                    <!-- Phone -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+212 xxxxxxxx</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z" />
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>avyr.digital@gmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Social Icons -->
+                <div class="social-icons-row">
+                    <!-- Facebook -->
+                    <a href="#" class="social-btn" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="social-btn" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="social-btn" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                        </svg>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a href="#" class="social-btn" aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Form -->
+            <div class="contact-form-card">
+                <div class="form-header">
+                    <h3>Send a Message</h3>
+                </div>
+                <form class="form-grid">
+                    <div class="form-row"> <!-- Using grid for Full Name if needed, here just stacking -->
+                        <input type="text" placeholder="Full Name" class="input-field" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Professional Email" class="input-field" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="Subject" class="input-field" required>
+                        <input type="text" placeholder="Pack (Optional)" class="input-field" id="pack-input">
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="How can we help?" class="input-field" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn-full">SEND REQUEST</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Option A: Interactive Particles Script
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+
+        // Resize canvas to full window size
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight; // Cover only hero section or full page? Let's do full page fixed
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Particle Class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.8; // Increased Speed slightly
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.size = Math.random() * 3.5 + 2; // Increased Size (was 2 + 1)
+                this.baseColor = 'rgba(168, 237, 242, ';
+                this.opacity = Math.random() * 0.7 + 0.5; // Increased Opacity (was 0.5 + 0.1)
+                this.color = this.baseColor + this.opacity + ')';
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                // Mouse Interaction
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 200) { // Increased interaction radius
+                    // Move away slightly
+                    this.x -= dx * 0.01;
+                    this.y -= dy * 0.01;
+
+                    // "Active" state: Pulse size
+                    if (this.size < 5) this.size += 0.2;
+                } else {
+                    if (this.size > 2.5) this.size -= 0.1; // Return to normal
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Create Particles
+        const particlesArray = [];
+        const numberOfParticles = 100; // Increased Density (was 80)
+
+        for (let i = 0; i < numberOfParticles; i++) {
+            particlesArray.push(new Particle());
+        }
+
+        // Mouse Object
+        const mouse = { x: null, y: null };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        // Animation Loop
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                // Draw Connections
+                for (let j = i; j < particlesArray.length; j++) {
+                    let dx = particlesArray[i].x - particlesArray[j].x;
+                    let dy = particlesArray[i].y - particlesArray[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 180) { // Increased connection distance
+                        ctx.strokeStyle = 'rgba(167, 235, 242, ' + (1 - distance / 180) * 0.25 + ')'; // Increased line opacity
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Pack Selection Logic
+        function clearPack() {
+            const contactSection = document.getElementById('contact');
+            const packInput = document.getElementById('pack-input');
+
+            // Allow default anchor behavior to handle scroll, or do it manually
+            // We'll let the anchor href="#contact" handle the jump, but we ensure input is cleared
+            packInput.value = '';
+
+            // Optional: Focused state to show readiness
+            setTimeout(() => {
+                packInput.style.borderColor = ''; // Reset any previous highlight
+                packInput.style.boxShadow = '';
+            }, 100);
+        }
+        function selectPack(packName) {
+            const contactSection = document.getElementById('contact');
+            const packInput = document.getElementById('pack-input');
+
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            packInput.value = packName;
+
+            // Highlight the input temporarily to show it was populated
+            packInput.style.borderColor = '#A7EBF2';
+            packInput.style.boxShadow = '0 0 15px rgba(167, 235, 242, 0.2)';
+            setTimeout(() => {
+                packInput.style.borderColor = '';
+                packInput.style.boxShadow = '';
+            }, 2000);
+        }
+        
+    </script>
+</body>
+
+</html>
