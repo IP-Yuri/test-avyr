@@ -50,6 +50,31 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <!-- Mobile Menu Icon could go here -->
+             <button class="mobile-toggle" aria-label="Open Interface" onclick="toggleMobileMenu()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A7EBF2" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+</button>
+
+<div id="mobile-overlay" class="mobile-menu-overlay">
+    
+    <button class="close-btn" onclick="toggleMobileMenu()">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A7EBF2" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+
+    <nav class="mobile-nav-content">
+        <a href="#hero" onclick="toggleMobileMenu()">01 // HOME</a>
+        <a href="#services" onclick="toggleMobileMenu()">02 // CAPABILITIES</a>
+        <a href="#pricing" onclick="toggleMobileMenu()">03 // COLLECTIONS</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="highlight-link">INITIALIZE CONTACT</a>
+    </nav>
+</div>
+
         </nav>
 
         <div class="hero-container">

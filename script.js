@@ -136,4 +136,14 @@ const canvas = document.getElementById('particles-canvas');
                 packInput.style.boxShadow = '';
             }, 2000);
         }
+        // for mobile menu
+       
+    function toggleMobileMenu() {
+        const overlay = document.getElementById('mobile-overlay');
+        overlay.classList.toggle('active');
         
+        // Optional: Prevent scrolling when menu is open
+        document.body.style.overflow = 
+            overlay.classList.contains('active') ? 'hidden' : 'auto';
+    }
+
