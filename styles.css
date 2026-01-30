@@ -1014,8 +1014,9 @@ textarea.input-field {
 @media (max-width: 768px) {
     .hero-section {
         /* Pushes content down by 120px (Adjust to match your Nav height) */
-        padding-top: 120px !important; 
-        padding-bottom: 50px;
+        padding-top: 140px;
+         
+        padding-bottom: 80px;
         /* Forces the text to not look too small on mobile */
         justify-content: flex-end; /* Optional: Pushes content slightly lower visually */
         /* Adjust this if the button is still too low */
