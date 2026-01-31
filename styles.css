@@ -921,11 +921,16 @@ textarea.input-field {
         justify-content: space-between;
         width: 44px;
         min-height: 44px;
-        background: transparent;
+        background: rgba(1, 28, 64, 0.8);
         border: none;
         cursor: pointer;
         z-index: 1001;
         padding: 10px 0;
+        transition: background 0.3s ease;
+    }
+
+    .hamburger:hover {
+        background: rgba(1, 28, 64, 0.95);
     }
 
     .hamburger-line {
@@ -1018,7 +1023,7 @@ textarea.input-field {
         }
 
         .hamburger {
-            /* display: flex !important; */
+            display: flex;
         }
 
         .nav-links {
@@ -1159,6 +1164,6 @@ textarea.input-field {
         .hamburger,
         .mobile-menu,
         .mobile-nav-link {
-            display: none;
+            display: none !important;
         }
     }

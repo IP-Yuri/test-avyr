@@ -72,8 +72,9 @@ const canvas = document.getElementById('particles-canvas');
         const mouse = { x: null, y: null };
 
         window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
         });
 
         // Animation Loop
