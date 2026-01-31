@@ -138,12 +138,28 @@ const canvas = document.getElementById('particles-canvas');
         }
         // for mobile menu
        
-    function toggleMobileMenu() {
-        const overlay = document.getElementById('mobile-overlay');
-        overlay.classList.toggle('active');
-        
-        // Optional: Prevent scrolling when menu is open
-        document.body.style.overflow = 
-            overlay.classList.contains('active') ? 'hidden' : 'auto';
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
     }
 
+    // Close Menu Function
+    function closeMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const menu = document.getElementById('mobile-menu');
+        const hamburger = document.querySelector('.hamburger');
+        if (menu && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+            closeMenu();
+        }
+    });

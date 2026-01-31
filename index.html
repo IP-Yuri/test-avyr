@@ -50,44 +50,34 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <!-- Mobile Menu Icon could go here -->
-             <button class="mobile-toggle" aria-label="Open Interface" onclick="toggleMobileMenu()">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A7EBF2" stroke-width="2">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
+            <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
 </button>
-
-<div id="mobile-overlay" class="mobile-menu-overlay">
-    
-    <button class="close-btn" onclick="toggleMobileMenu()">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A7EBF2" stroke-width="1.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-    </button>
-
-    <nav class="mobile-nav-content">
-        <a href="#hero" onclick="toggleMobileMenu()">01 // HOME</a>
-        <a href="#capabilities" onclick="toggleMobileMenu()">02 // CAPABILITIES</a>
-        <a href="#collections" onclick="toggleMobileMenu()">03 // COLLECTIONS</a>
-        <a href="#contact" onclick="toggleMobileMenu()" class="highlight-link">INITIALIZE CONTACT</a>
-    </nav>
-</div>
-
         </nav>
 
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#hero" class="mobile-nav-link" onclick="closeMenu()">Home</a>
+            <a href="#capabilities" class="mobile-nav-link" onclick="closeMenu()">Services</a>
+            <a href="#collections" class="mobile-nav-link" onclick="closeMenu()">Pricing</a>
+            <a href="#contact" class="mobile-nav-link" onclick="closeMenu()">Contact</a>
+        </div>
+
         <div class="hero-container">
-            <h1 class="hero-headline">
-                Beauty is the interface.<br>Code is the pulse.
-            </h1>
-            <p class="hero-subheadline">
-                Digital Architecture for the Modern Vanguard.
-            </p>
-            <div>
-                <a href="#contact" class="hero-cta">
-                    [ Enter The Maison ]
-                </a>
+            <div class="hero-content">
+                <h1 class="hero-headline">
+                    Beauty is the interface.<br>Code is the pulse.
+                </h1>
+                <p class="hero-subheadline">
+                    Digital Architecture for the Modern Vanguard.
+                </p>
+                <div class="hero-cta-wrapper">
+                    <a href="#contact" class="hero-cta">
+                        [ Enter The Maison ]
+                    </a>
+                </div>
             </div>
         </div>
     </header>

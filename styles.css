@@ -914,113 +914,251 @@ textarea.input-field {
 }
 
 /*for mobile menu*/
-/* --- MOBILE TRIGGER --- */
-.mobile-toggle {
-    display: none; /* Hidden on desktop */
-    background: transparent;
-    border: 1px solid rgba(167, 235, 242, 0.2);
-    padding: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.mobile-toggle:hover {
-    box-shadow: 0 0 10px rgba(167, 235, 242, 0.2);
-    border-color: #A7EBF2;
-}
-
-/* Show on mobile/tablet */
-@media (max-width: 768px) {
-    .mobile-toggle {
-        display: block;
+/* --- Hamburger Button --- */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 44px;
+        min-height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 10px 0;
     }
-    /* Hide normal nav links if you have them */
-    .desktop-nav { 
-        display: none; 
+
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background: var(--color-accent);
+        transition: all 0.3s ease;
+        transform-origin: center;
     }
-}
 
-/* --- MOBILE OVERLAY (The Portal) --- */
-.mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 5, 16, 0.98); /* Deep Black, slight transparency */
-    backdrop-filter: blur(10px); /* Blurs the website behind it */
-    z-index: 9999;
-    
-    /* Animation State: Hidden by default */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    
-    /* Flex Center */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Active State (Added by JS) */
-.mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-/* --- LINKS --- */
-.mobile-nav-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
-}
-
-.mobile-nav-content a {
-    font-family: 'Prata', serif; /* Your Brand Font */
-    color: #fff;
-    text-decoration: none;
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    transition: color 0.3s ease;
-}
-
-.mobile-nav-content a:hover {
-    color: #A7EBF2; /* Electric Ice */
-}
-
-.mobile-nav-content .highlight-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    color: #A7EBF2;
-    border: 1px solid #A7EBF2;
-    padding: 15px 30px;
-    margin-top: 20px;
-}
-/* Mobile Only Fix */
-@media (max-width: 768px) {
-    .hero-section {
-        /* Pushes content down by 120px (Adjust to match your Nav height) */
-        padding-top: 140px;
-         
-        padding-bottom: 80px;
-        /* Forces the text to not look too small on mobile */
-        justify-content: flex-end; /* Optional: Pushes content slightly lower visually */
-        /* Adjust this if the button is still too low */
-        /* Optional: Ensure text alignment stays readable */
-        text-align: center;
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
     }
-}
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* --- Mobile Menu Overlay --- */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--color-canvas);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(15px);
+    }
+
+    .mobile-menu.active {
+        right: 0;
+    }
+
+    .mobile-nav-link {
+        font-family: var(--font-body);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--color-accent);
+        text-decoration: none;
+        padding: 1rem 2rem;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+    }
+
+    .mobile-nav-link:hover {
+        color: #fff;
+        border-bottom-color: var(--color-accent);
+        background: rgba(167, 235, 242, 0.05);
+    }
+
+    /* Body overlay when menu is open */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    /* --- MOBILE RESPONSIVENESS (Media Queries) --- */
+    @media (max-width: 767px) {
+
+        /* Navbar Adjustments */
+        .navbar {
+            padding: 1rem 1.5rem;
+        }
+
+        .hamburger {
+            /* display: flex !important; */
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        /* Hero Section Mobile Fixes */
+        .hero-container {
+            padding: 0 1.5rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-headline {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            /* Prevent overlap */
+            padding: 0 0.5rem;
+        }
+
+        .hero-subheadline {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+
+        .hero-cta-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .hero-cta {
+            padding: 1rem 2rem;
+            font-size: 0.7rem;
+            min-height: 44px;
+            /* Touch target size */
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Philosophy Section Mobile */
+        #philosophy {
+            padding: 4rem 1.5rem;
+        }
+
+        #philosophy h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+
+        #philosophy .grid {
+            gap: 3rem;
+        }
+
+        /* Capabilities Section Mobile */
+        #capabilities {
+            padding: 4rem 1.5rem;
+        }
+
+        #capabilities h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        #capabilities .flex {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Collections Section Mobile */
+        #collections {
+            padding: 4rem 1.5rem;
+        }
+
+        #collections h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .collection-card {
+            padding: 2rem 1.5rem;
+            min-height: auto;
+        }
+
+        .collection-card.featured {
+            transform: translateY(0);
+            margin: 1rem 0;
+        }
+
+        /* Contact Section Mobile */
+        #contact {
+            padding: 4rem 1.5rem;
+        }
+
+        .contact-info-col h2 {
+            font-size: 2rem;
+        }
+
+        .contact-form-card {
+            padding: 2rem 1.5rem;
+        }
+
+        /* Touch Targets */
+        .social-btn,
+        .info-icon,
+        .input-field {
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .orb-1,
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+        }
+
+        .orb-1 {
+            top: -50px;
+            left: -50px;
+        }
+
+        .orb-2 {
+            bottom: 20%;
+            right: -25px;
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        .hamburger,
+        .mobile-menu,
+        .mobile-nav-link {
+            display: none;
+        }
+    }
