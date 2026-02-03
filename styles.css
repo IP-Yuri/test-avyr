@@ -614,6 +614,7 @@ a {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .nav-links {
@@ -1028,7 +1029,8 @@ textarea.input-field {
 
         /* Navbar Adjustments */
         .navbar {
-            padding: 1rem 1.5rem;
+            padding: 1rem 2rem;
+            padding-right: calc(2rem + env(safe-area-inset-right));
         }
 
         .hamburger {
