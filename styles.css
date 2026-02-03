@@ -1033,6 +1033,7 @@ textarea.input-field {
 
         .hamburger {
             display: flex;
+            margin-left: auto;
         }
 
         .nav-links {
