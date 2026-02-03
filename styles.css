@@ -105,8 +105,8 @@ a {
     text-align: center;
     overflow: hidden;
     height: 100vh;
-    height: 100dvh; /* The modern fix */
-    min-height: 600px; /* Prevents squashing on small landscape screens */
+    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    min-height: 600px;
     width: 100%;
     position: relative;
     /* Transparent so body radial gradient shows through */
@@ -173,6 +173,7 @@ a {
     animation: fadeUp 1.5s ease-out 0.5s forwards;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     /* Stronger shadow for readability */
+    transition: font-size 0.3s ease, line-height 0.3s ease;
 }
 
 .hero-subheadline {
@@ -187,6 +188,7 @@ a {
     opacity: 0;
     animation: fadeUp 1.5s ease-out 0.8s forwards;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    transition: font-size 0.3s ease, letter-spacing 0.3s ease;
 }
 
 .hero-cta {
@@ -606,7 +608,6 @@ a {
     padding: 1.5rem 3rem;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background: rgba(16, 13, 59, 0.6);
     /* Black glass */
@@ -618,6 +619,7 @@ a {
 .nav-links {
     display: flex;
     gap: 3rem;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -655,9 +657,10 @@ a {
 .glow-orb {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(167, 235, 242, 0.1) 0%, rgba(5, 5, 5, 0) 70%);
+    background: radial-gradient(circle, rgba(167, 235, 242, 0.25) 0%, rgba(5, 5, 5, 0) 70%);
     /* Lower alpha for black bg */
-    filter: blur(40px);
+    filter: blur(30px);
+    mix-blend-mode: screen;
     z-index: 0;
     pointer-events: none;
     animation: floatBackground 20s infinite ease-in-out alternate;
@@ -677,7 +680,7 @@ a {
     height: 500px;
     bottom: 10%;
     right: -50px;
-    background: radial-gradient(circle, rgba(167, 235, 242, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+    background: radial-gradient(circle, rgba(167, 235, 242, 0.2) 0%, rgba(5, 5, 5, 0) 70%);
     animation-delay: -5s;
     animation-duration: 25s;
 }
@@ -926,7 +929,7 @@ textarea.input-field {
         cursor: pointer;
         z-index: 1001;
         padding: 10px 0;
-        transition: background 0.3s ease;
+        transition: background 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .hamburger:hover {
@@ -1001,6 +1004,12 @@ textarea.input-field {
     }
 
     /* Body overlay when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
     body.menu-open::before {
         content: '';
         position: fixed;
@@ -1161,9 +1170,13 @@ textarea.input-field {
 
     @media (min-width: 768px) {
 
-        .hamburger,
-        .mobile-menu,
-        .mobile-nav-link {
-            display: none !important;
+        .hamburger {
+            display: none;
+        }
+        
+        .mobile-menu {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }
     }

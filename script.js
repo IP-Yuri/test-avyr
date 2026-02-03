@@ -5,8 +5,9 @@ const canvas = document.getElementById('particles-canvas');
 
         // Resize canvas to full window size
         function resize() {
+            const heroSection = document.getElementById('hero');
             width = window.innerWidth;
-            height = window.innerHeight; // Cover only hero section or full page? Let's do full page fixed
+            height = heroSection.offsetHeight;
             canvas.width = width;
             canvas.height = height;
         }
@@ -62,11 +63,28 @@ const canvas = document.getElementById('particles-canvas');
 
         // Create Particles
         const particlesArray = [];
-        const numberOfParticles = 100; // Increased Density (was 80)
+        const numberOfParticles = window.innerWidth < 768 ? 30 : 100; // 30 on mobile, 100 on desktop
 
         for (let i = 0; i < numberOfParticles; i++) {
             particlesArray.push(new Particle());
         }
+
+        // Stop animation on scroll for mobile performance
+        let isScrolling;
+        let animationPaused = false;
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 768) {
+                window.clearTimeout(isScrolling);
+                cancelAnimationFrame(animationId);
+                animationPaused = true;
+                
+                isScrolling = setTimeout(() => {
+                    animationPaused = false;
+                    animate();
+                }, 150);
+            }
+        });
 
         // Mouse Object
         const mouse = { x: null, y: null };
@@ -78,7 +96,10 @@ const canvas = document.getElementById('particles-canvas');
         });
 
         // Animation Loop
+        let animationId;
         function animate() {
+            if (animationPaused) return;
+            
             ctx.clearRect(0, 0, width, height);
 
             for (let i = 0; i < particlesArray.length; i++) {
@@ -102,7 +123,7 @@ const canvas = document.getElementById('particles-canvas');
                 }
             }
 
-            requestAnimationFrame(animate);
+            animationId = requestAnimationFrame(animate);
         }
 
         animate();
