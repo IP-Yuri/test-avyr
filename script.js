@@ -185,3 +185,80 @@ const canvas = document.getElementById('particles-canvas');
             closeMenu();
         }
     });
+    
+    // 1. MODAL CONTROLS
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // --- PART 1: MODAL CONTROLS ---
+        const modal = document.getElementById('inquiryModal');
+        
+        // Expose these to the window so the onclick="..." in HTML works
+        window.openModal = function() {
+            modal.classList.add('active');
+        };
+        
+        window.closeModal = function() {
+            modal.classList.remove('active');
+        };
+
+        // Close if clicked outside
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+        }
+
+        // --- PART 2: THE SILENT FORM ---
+        var form = document.getElementById("luxuryForm");
+        
+        if (form) {
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault(); // 🛑 STOP THE REDIRECT
+                
+                var status = document.getElementById("my-form-status");
+                var data = new FormData(event.target);
+                var btn = form.querySelector('button');
+                var originalText = btn.innerHTML;
+
+                // 1. Show Loading State
+                btn.innerHTML = "Processing...";
+                btn.style.opacity = "0.7";
+
+                // 2. Send Data
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json' // CRITICAL: Tells Formspree "Don't redirect me!"
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Success
+                        closeModal();
+                        alert("Thank you. The concierge has received your request.");
+                        form.reset();
+                    } else {
+                        // Error from Formspree
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                alert("System busy. Please try again.");
+                            }
+                        });
+                    }
+                }).catch(error => {
+                    // Network Error
+                    console.error("Engineer Debug:", error);
+                    alert("SYSTEM ERROR: " + error.message);
+                }).finally(() => {
+                    // Reset Button
+                    btn.innerHTML = originalText;
+                    btn.style.opacity = "1";
+                });
+            });
+            console.log("Engineer Log: Form listener attached successfully.");
+        } else {
+            console.error("Engineer Error: Could not find form with id='luxuryForm'. Check your HTML!");
+        }
+    });
