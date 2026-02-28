@@ -928,7 +928,7 @@ textarea.input-field {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 44px;
+        width: 40px;
         min-height: 44px;
         background: rgba(1, 28, 64, 0.8);
         border: none;
