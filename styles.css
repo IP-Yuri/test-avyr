@@ -933,7 +933,7 @@ textarea.input-field {
         background: rgba(1, 28, 64, 0.8);
         border: none;
         cursor: pointer;
-        z-index: 1001;
+        z-index: 999;
         padding: 0;
         gap: 6px;
         transition: background 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
@@ -944,7 +944,7 @@ textarea.input-field {
     }
 
     .hamburger-line {
-        width: 100%;
+        width: 90%;
         height: 2px;
         background: var(--color-accent);
         transition: all 0.3s ease;
