@@ -1,0 +1,247 @@
+/* manifesto.css - Custom Styling for The Manifesto (Vanilla CSS) */
+
+/* 1. Base Overrides (Replaces Tailwind globals & utilities) */
+.manifesto-body {
+    background-color: #000000 !important; /* Pure black foundation */
+    color: #ffffff;
+    background-image: none !important; /* Remove radial gradient from styles.css */
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+}
+
+::-moz-selection {
+    background-color: #A7EBF2;
+    color: #011C40;
+}
+::selection {
+    background-color: #A7EBF2;
+    color: #011C40;
+}
+
+/* Base Wrapper & Spacer */
+.manifesto-wrapper {
+    min-height: calc(100vh - 100px);
+    padding-top: 150px; /* Space for the fixed navbar */
+    padding-bottom: 80px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navbar overrides for pure black environment */
+.navbar {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Text utility replaces Tailwind's text-white */
+.text-white {
+    color: #ffffff;
+}
+
+/* Typography headers */
+.manifesto-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.manifesto-doc-label {
+    font-family: 'Space Mono', monospace;
+    color: #A7EBF2;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.75rem;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.manifesto-heading {
+    font-family: var(--font-headline, 'Playfair Display', serif);
+    font-size: clamp(3rem, 6vw + 1rem, 5rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Monolithic Signal Custom Line */
+.manifesto-signal-line {
+    width: 100%;
+    max-width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #A7EBF2, transparent);
+    opacity: 0.6;
+    margin: 3rem auto;
+}
+
+.manifesto-signal-line.faded {
+    opacity: 0.3;
+    margin-top: 5rem;
+}
+
+/* Hero Section */
+.manifesto-hero-section {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto 5rem;
+    text-align: center;
+}
+
+.manifesto-copy {
+    font-family: var(--font-body, 'Montserrat', sans-serif);
+    color: #d1d5db; /* Replacing Tailwind gray-300 */
+    font-weight: 300;
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    
+    /* 1. Container structure */
+    max-width: 650px;
+    margin: 0 auto;
+    
+    /* 2. Default (Mobile) Alignment */
+    text-align: left; /* Eliminates large gaps on narrow screens */
+    
+    /* 3. Readability Enhancements */
+    line-height: 2.2;
+}
+
+/* 4. Desktop Alignment (Where justification works beautifully) */
+@media (min-width: 768px) {
+    .manifesto-copy {
+        text-align: justify;
+        text-align-last: center;
+    }
+}
+
+/* Pillars Section */
+.manifesto-pillars-section {
+    max-width: 1024px;
+    width: 100%;
+    margin: 5rem auto;
+}
+
+.manifesto-pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .manifesto-pillars-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+
+.pillar {
+    position: relative;
+    padding: 2.5rem 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+}
+
+.pillar:hover {
+    border-top-color: rgba(167, 235, 242, 0.3);
+}
+
+.pillar-accent {
+    font-family: 'Space Mono', monospace;
+    color: #A7EBF2;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.pillar-heading {
+    font-family: var(--font-headline, 'Playfair Display', serif);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+}
+
+.pillar-copy {
+    font-family: var(--font-body, 'Montserrat', sans-serif);
+    font-size: 1rem;
+    color: #9ca3af; /* Replacing Tailwind gray-400 */
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.mb-spacing {
+    margin-bottom: 2rem;
+}
+
+/* Monospaced Technical Data Blocks */
+.pillar-data {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(167, 235, 242, 0.8);
+    background: rgba(167, 235, 242, 0.02);
+    padding: 1.25rem;
+    border-left: 1px solid #A7EBF2;
+    line-height: 2;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-data-block {
+    display: block;
+}
+
+/* The Entity Anchor Section */
+.manifesto-anchor-section {
+    max-width: 800px;
+    width: 100%;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.manifesto-anchor-text {
+    font-family: var(--font-headline, 'Playfair Display', serif);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.manifesto-anchor-subtext {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #6b7280; /* Replacing tailwind gray-500 */
+}
+
+/* Footer structure using vanilla flex CSS instead of Tailwind */
+.manifesto-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 4rem 2.5rem;
+    text-align: center;
+    background-color: rgba(0, 5, 16, 0.9);
+    border-top: 1px solid rgba(167, 235, 242, 0.15);
+    margin-top: auto;
+    width: 100%;
+}
+
+.manifesto-copyright {
+    color: #555555;
+    font-size: 0.75rem;
+    font-family: var(--font-body, 'Montserrat', sans-serif);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0;
+}
