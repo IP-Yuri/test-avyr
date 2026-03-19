@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We do not build websites; we construct digital sanctuaries. AVYR Digital engineers high-end UI/UX architectures and bespoke web experiences for premium brands.">
+    <meta name="description"
+        content="We do not build websites; we construct digital sanctuaries. AVYR Digital engineers high-end UI/UX architectures and bespoke web experiences for premium brands.">
     <meta property="og:site_name" content="AVYR DIGITAL">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ip-yuri.github.io/test-avyr/">
@@ -12,10 +13,12 @@
     <meta property="og:title" content="AVYR | Digital Architecture">
     <meta property="og:description" content="Beauty is the interface. Code is the pulse. Tap to enter the maison.">
 
-    <meta property="og:image" content="https://ip-yuri.github.io/test-avyr/avyr-digital.jpg">
+    <meta property="og:image" content="https://ip-yuri.github.io/test-avyr/assets/avyr-digital.jpg">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+
+    <link rel="icon" href="assets/logo.png">
 
     <meta name="theme-color" content="#000510">
     <title>AVYR Digital | Premium Digital Architecture & UI/UX</title>
@@ -42,11 +45,11 @@
     </script>
 </head>
 
-    <body class="antialiased selection:bg-[#A7EBF2] selection:text-[#011C40]">
+<body class="antialiased selection:bg-[#A7EBF2] selection:text-[#011C40]">
 
     <!-- Floating Background Orbs -->
-    <div class="glow-orb orb-1" ></div>
-    <div class="glow-orb orb-2" ></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
 
     <!-- Canvas for Option A: Digital Pulse -->
     <canvas id="particles-canvas"></canvas>
@@ -59,21 +62,23 @@
             <div class="nav-links">
                 <a href="#hero" class="nav-link">Home</a>
                 <a href="#capabilities" class="nav-link">Services</a>
+                <a href="archive.html" class="nav-link">Archive</a>
                 <a href="#collections" class="nav-link">Pricing</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <!-- Mobile Menu Icon could go here -->
             <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-</button>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </nav>
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <a href="#hero" class="mobile-nav-link" onclick="closeMenu()">Home</a>
             <a href="#capabilities" class="mobile-nav-link" onclick="closeMenu()">Services</a>
+            <a href="archive.html" class="mobile-nav-link" onclick="closeMenu()">Archive</a>
             <a href="#collections" class="mobile-nav-link" onclick="closeMenu()">Pricing</a>
             <a href="#contact" class="mobile-nav-link" onclick="closeMenu()">Contact</a>
         </div>
@@ -106,7 +111,9 @@
                     <h2 class="text-4xl md:text-5xl mb-6" style="font-family: 'Playfair Display', serif;">We do not
                         build websites.<br>We construct digital sanctuaries.</h2>
                     <p class="text-gray-400 font-light leading-loose">
-                        The first interaction with your brand is no longer physical; it is digital. We forge bespoke environments where design meets function, ensuring your digital front door reflects the excellence of the business behind it.
+                        The first interaction with your brand is no longer physical; it is digital. We forge bespoke
+                        environments where design meets function, ensuring your digital front door reflects the
+                        excellence of the business behind it.
                     </p>
                 </div>
                 <div class="space-y-6">
@@ -164,7 +171,7 @@
                         style="font-family: 'Playfair Display', serif;">
                         THE PULSE (SEO & Strategy)</h3>
                     <p class="text-gray-400 font-light text-sm leading-relaxed">
-                       A beautiful website is useless if it cannot be found. We optimize your site to appear at the top
+                        A beautiful website is useless if it cannot be found. We optimize your site to appear at the top
                         of search results, ensuring high-value clients see you first.
                     </p>
                 </div>
@@ -192,7 +199,7 @@
                             class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
                             The Foundation.</p>
                         <p class="text-lg text-gray-300 font-light leading-relaxed">
-                             A singular, high-impact digital presence designed to convert instantly.
+                            A singular, high-impact digital presence designed to convert instantly.
                         </p>
                         <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
                             <li class="flex items-center"><span
@@ -233,7 +240,8 @@
 
                         </ul>
                         <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Custom Assessment</div>
-                        <button onclick="selectPack('The Ascension')" class="card-select-btn featured-btn">Inquire</button>
+                        <button onclick="selectPack('The Ascension')"
+                            class="card-select-btn featured-btn">Inquire</button>
                     </div>
                 </div>
 
@@ -261,7 +269,8 @@
 
                         </ul>
                         <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Bespoke Partnership</div>
-                        <button onclick="selectPack('The Apex')" class="card-select-btn">Discuss Your Architecture</button>
+                        <button onclick="selectPack('The Apex')" class="card-select-btn">Discuss Your
+                            Architecture</button>
                     </div>
                 </div>
 
@@ -281,6 +290,7 @@
         </div>
     </section>
 
+
     <!-- NEW Contact Section (Split Layout) -->
     <section id="contact" class="py-24 px-4 md:px-12 bg-gradient-to-b from-[#011C40] to-black relative">
         <div class="contact-split-container">
@@ -294,7 +304,7 @@
 
                 <div class="contact-info-items">
                     <!-- Phone -->
-                   
+
 
                     <!-- Email -->
                     <div class="info-item">
@@ -316,9 +326,10 @@
                 <!-- Social Icons -->
                 <div class="social-icons-row">
                     <!-- Facebook -->
-                    
+
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/avyr_digital?igsh=bGxjOHg3aTRvNG40" class="social-btn" aria-label="Instagram">
+                    <a href="https://www.instagram.com/avyr_digital?igsh=bGxjOHg3aTRvNG40" class="social-btn"
+                        aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             viewBox="0 0 16 16">
                             <path
@@ -326,7 +337,7 @@
                         </svg>
                     </a>
                     <!-- LinkedIn -->
-                   
+
                     <!-- WhatsApp -->
                     <a href="#" class="social-btn" aria-label="WhatsApp">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -339,36 +350,41 @@
             </div>
 
             <!-- Right Column: Form -->
-    
-   <div id="inquiryModal" class="contact-form-card">
-        <div class="form-header">
-            <h3>Send a Message</h3>
-        </div>
-    
-        <form id="luxuryForm" class="form-grid" action="https://formspree.io/f/xykjnjpl" method="POST">
-        
-            <div class="form-row">
-                <input type="text" name="name" placeholder="Full Name" class="input-field" required>
+
+            <div id="inquiryModal" class="contact-form-card">
+                <div class="form-header">
+                    <h3>Send a Message</h3>
+                </div>
+
+                <form id="luxuryForm" class="form-grid" action="https://formspree.io/f/xykjnjpl" method="POST">
+
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Full Name" class="input-field" required>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Professional Email" class="input-field" required>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" name="subject" placeholder="Subject" class="input-field" required>
+                        <input type="text" name="pack" placeholder="Pack (Optional)" class="input-field"
+                            id="pack-input">
+                    </div>
+
+                    <div class="form-row">
+                        <textarea name="message" placeholder="How can we help?" class="input-field" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn-full">Submit Inquiry</button>
+                </form>
             </div>
-        
-            <div class="form-row">
-                <input type="email" name="email" placeholder="Professional Email" class="input-field" required>
-            </div>
-        
-            <div class="form-row">
-                <input type="text" name="subject" placeholder="Subject" class="input-field" required>
-                <input type="text" name="pack" placeholder="Pack (Optional)" class="input-field" id="pack-input">
-            </div>
-        
-            <div class="form-row">
-                <textarea name="message" placeholder="How can we help?" class="input-field" required></textarea>
-            </div>
-        
-            <button type="submit" class="submit-btn-full">Submit Inquiry</button>
-        </form>
-    </div>
         </div>
     </section>
+
+    <footer class="flex flex-col gap-10 py-16 px-10 text-center bg-[#000510]/90 border-t border-[rgba(167,235,242,0.15)]">
+        <p class="text-[#555555] text-xs font-sans tracking-[0.2em] uppercase">© 2026 AVYR DIGITAL. Engineered and Founded by Salaheddine CHIKHI. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

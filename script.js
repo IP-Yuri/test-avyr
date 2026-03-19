@@ -262,3 +262,25 @@ const canvas = document.getElementById('particles-canvas');
             console.error("Engineer Error: Could not find form with id='luxuryForm'. Check your HTML!");
         }
     });
+
+    // --- ARCHIVE SCROLL REVEAL ---
+    (function initArchiveReveal() {
+        const revealEls = document.querySelectorAll('.archive-reveal');
+        if (!revealEls.length) return;
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealEls.forEach(function(el) {
+            observer.observe(el);
+        });
+    })();
