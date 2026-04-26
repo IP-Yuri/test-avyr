@@ -40,17 +40,33 @@
 
 <body class="manifesto-body">
 
-    <!-- Fixed Navigation from Index -->
+    <!-- Fixed Navigation -->
     <nav class="navbar text-white">
         <a href="index.html" class="logo">AVYR</a>
         <div class="nav-links manifesto-nav">
             <a href="index.html#hero" class="nav-link">Home</a>
+            <a href="index.html#capabilities" class="nav-link">Services</a>
+            <a href="archive.html" class="nav-link">Archive</a>
+            <a href="index.html#collections" class="nav-link">Pricing</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
         </div>
-        
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </nav>
 
-    <!-- Mobile Menu -->
-    
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#hero" class="mobile-nav-link" onclick="closeMenu()">Home</a>
+        <a href="index.html#capabilities" class="mobile-nav-link" onclick="closeMenu()">Services</a>
+        <a href="archive.html" class="mobile-nav-link" onclick="closeMenu()">Archive</a>
+        <a href="index.html#collections" class="mobile-nav-link" onclick="closeMenu()">Pricing</a>
+        <a href="index.html#contact" class="mobile-nav-link" onclick="closeMenu()">Contact</a>
+    </div>
+
 
     <!-- Manifesto Monolithic Structure -->
     <main class="manifesto-wrapper">

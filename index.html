@@ -8,7 +8,7 @@
         content="We do not build websites; we construct digital sanctuaries. AVYR Digital engineers high-end UI/UX architectures and bespoke web experiences for premium brands.">
     <meta property="og:site_name" content="AVYR DIGITAL">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ip-yuri.github.io/test-avyr/">
+    <meta property="og:url" content="https://avyrdigital.com">
 
     <meta property="og:title" content="AVYR | Digital Architecture">
     <meta property="og:description" content="Beauty is the interface. Code is the pulse. Tap to enter the maison.">
@@ -22,48 +22,36 @@
 
     <meta name="theme-color" content="#000510">
     <title>AVYR Digital | Premium Digital Architecture & UI/UX</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        deepNavy: '#011C40',
-                        cyanAccent: '#A7EBF2',
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                }
-            }
-        }
-    </script>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "AVYR DIGITAL",
-      "url": "https://avyrdigital.com",
-      "logo": "https://avyrdigital.com/logo.png",
-      "founder": {
-        "@type": "Person",
-        "name": "Salaheddine CHIKHI",
-        "jobTitle": "Founder & Digital Architect",
-        "sameAs": [
-          "https://www.linkedin.com/in/[TON-PROFIL-LINKEDIN]" //to replace with my linkedin profile
-        ]
-      },
-      "description": "Digital Architecture for the Premium Sector. Engineering high-performance monoliths for Luxury, Real Estate, and Aesthetic Medicine."
+       "@context": "https://schema.org",
+       "@type": "Organization",
+       "name": "AVYR DIGITAL",
+       "url": "https://avyrdigital.com",
+       "logo": "https://avyrdigital.com/logo.png",
+       "address": {
+       "@type": "PostalAddress",
+       "addressLocality": "Casablanca",
+       "addressCountry": "MA"
+       },
+       "founder": {
+       "@type": "Person",
+       "name": "Salaheddine Chikhi",
+       "jobTitle": "Founder & Digital Architect",
+       "sameAs": [
+         "https://www.linkedin.com/in/salaheddine-chikhi/"
+         ]
+       },
+       "description": "Digital Architecture for the Premium Sector. Engineering high-performance monoliths for Luxury, Real Estate, and Aesthetic Medicine."
     }
     </script>
 </head>
 
-<body class="antialiased selection:bg-[#A7EBF2] selection:text-[#011C40]">
+<body class="theme-dark">
 
     <!-- Floating Background Orbs -->
     <div class="glow-orb orb-1"></div>
@@ -121,28 +109,28 @@
     </header>
 
     <!-- Philosophy Section -->
-    <section id="philosophy" class="py-24 px-4 md:px-12 relative">
-        <div class="max-w-6xl mx-auto space-y-12">
+    <section id="philosophy" class="philosophy-section-wrap">
+        <div class="philosophy-inner">
             <!-- Signal Line -->
-            <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#A7EBF2] to-transparent"></div>
+            <div class="signal-line-gradient"></div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl mb-6" style="font-family: 'Playfair Display', serif;">We do not
+            <div class="philosophy-grid">
+                <div class="philosophy-main">
+                    <h2 class="philosophy-title">We do not
                         build websites.<br>We construct digital sanctuaries.</h2>
-                    <p class="text-gray-400 font-light leading-loose">
+                    <p class="philosophy-desc">
                         The first interaction with your brand is no longer physical; it is digital. We forge bespoke
                         environments where design meets function, ensuring your digital front door reflects the
                         excellence of the business behind it.
                     </p>
                 </div>
-                <div class="space-y-6">
-                    <p class="text-xl md:text-2xl font-serif italic text-white/90">
+                <div class="philosophy-side">
+                    <p class="philosophy-quote">
                         "We translate noise into nuance."
                     </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="h-[1px] w-12 bg-[#A7EBF2]"></div>
-                        <span class="uppercase tracking-widest text-xs text-[#A7EBF2]">The AVYR Standard</span>
+                    <div class="avyr-standard">
+                        <div class="standard-line"></div>
+                        <span class="standard-text">The AVYR Standard</span>
                     </div>
                 </div>
             </div>
@@ -150,47 +138,40 @@
     </section>
 
     <!-- Capabilities Section (formerly Services) -->
-    <section id="capabilities" class="py-24 px-4 md:px-12 bg-white/5">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16">
-                <span class="text-[#A7EBF2] uppercase tracking-widest text-xs block mb-4">Expertise</span>
-                <h2 class="text-4xl md:text-5xl" style="font-family: 'Playfair Display', serif;">THE CAPABILITIES.</h2>
+    <section id="capabilities" class="capabilities-section-wrap">
+        <div class="capabilities-inner">
+            <div class="capabilities-heading">
+                <span class="capabilities-subtitle">Expertise</span>
+                <h2 class="capabilities-title">THE CAPABILITIES.</h2>
             </div>
 
             <!-- Services List Flexbox -->
-            <div class="flex flex-col md:flex-row justify-between gap-12">
+            <div class="capabilities-flex-grid">
                 <!-- Service 1 -->
-                <div class="group flex-1 space-y-4">
-                    <span
-                        class="text-5xl text-white/10 group-hover:text-[#A7EBF2]/20 transition-colors duration-500 font-serif">01</span>
-                    <h3 class="text-2xl font-medium group-hover:text-[#A7EBF2] transition-colors duration-300"
-                        style="font-family: 'Playfair Display', serif;">DIGITAL ARCHITECTURE</h3>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                <div class="capability-card group">
+                    <span class="capability-num">01</span>
+                    <h3 class="capability-name">DIGITAL ARCHITECTURE</h3>
+                    <p class="capability-desc">
                         We reject generic templates. We code your website from scratch to ensure it is lightning-fast,
                         secure, and works perfectly on every mobile device.
                     </p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="group flex-1 space-y-4">
-                    <span
-                        class="text-5xl text-white/10 group-hover:text-[#A7EBF2]/20 transition-colors duration-500 font-serif">02</span>
-                    <h3 class="text-2xl font-medium group-hover:text-[#A7EBF2] transition-colors duration-300"
-                        style="font-family: 'Playfair Display', serif;">EXPERIENCE DESIGN (UI/UX)</h3>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                <div class="capability-card group">
+                    <span class="capability-num">02</span>
+                    <h3 class="capability-name">EXPERIENCE DESIGN (UI/UX)</h3>
+                    <p class="capability-desc">
                         We design websites that feel intuitive and build instant trust. We ensure your visitors can find
                         exactly what they need, effortlessly converting them from browsers into clients.
                     </p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="group flex-1 space-y-4">
-                    <span
-                        class="text-5xl text-white/10 group-hover:text-[#A7EBF2]/20 transition-colors duration-500 font-serif">03</span>
-                    <h3 class="text-2xl font-medium group-hover:text-[#A7EBF2] transition-colors duration-300"
-                        style="font-family: 'Playfair Display', serif;">
-                        THE PULSE (SEO & Strategy)</h3>
-                    <p class="text-gray-400 font-light text-sm leading-relaxed">
+                <div class="capability-card group">
+                    <span class="capability-num">03</span>
+                    <h3 class="capability-name">THE PULSE (SEO & Strategy)</h3>
+                    <p class="capability-desc">
                         A beautiful website is useless if it cannot be found. We optimize your site to appear at the top
                         of search results, ensuring high-value clients see you first.
                     </p>
@@ -200,95 +181,65 @@
     </section>
 
     <!-- Collections Section (formerly Pricing) -->
-    <section id="collections" class="py-24 px-4 md:px-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl" style="font-family: 'Playfair Display', serif;">THE COLLECTIONS.</h2>
+    <section id="collections" class="collections-section-wrap">
+        <div class="collections-inner">
+            <div class="collections-heading">
+                <h2 class="collections-title">THE COLLECTIONS.</h2>
             </div>
 
             <!-- Pricing Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="collections-grid">
 
                 <!-- Card 1 -->
-                <div
-                    class="collection-card border border-white/10 p-8 flex flex-col justify-between group relative bg-[#011C40]">
-                    <div>
-                        <h3 class="text-3xl font-heading mb-2 group-hover:text-[#A7EBF2] transition-colors"
-                            style="font-family: 'Playfair Display', serif;">THE GENESIS</h3>
-                        <p
-                            class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
-                            The Foundation.</p>
-                        <p class="text-lg text-gray-300 font-light leading-relaxed">
+                <div class="collection-card group">
+                    <div class="collection-card-inner">
+                        <h3 class="collection-card-title group-hover">THE GENESIS</h3>
+                        <p class="collection-card-subtitle">The Foundation.</p>
+                        <p class="collection-card-desc">
                             A singular, high-impact digital presence designed to convert instantly.
                         </p>
-                        <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>One-Page Scroll Journey
-                            </li>
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Essential SEO</li>
-
+                        <ul class="collection-features">
+                            <li class="feature-item"><span class="feature-dot"></span>One-Page Scroll Journey</li>
+                            <li class="feature-item"><span class="feature-dot"></span>Essential SEO</li>
                         </ul>
-                        <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Custom Assessment</div>
+                        <div class="collection-assessment">Custom Assessment</div>
                         <button onclick="selectPack('The Genesis')" class="card-select-btn">Request an Audit</button>
                     </div>
                 </div>
 
                 <!-- Card 2 (Featured) -->
-                <div
-                    class="collection-card featured border border-[#A7EBF2] p-8 flex flex-col justify-between relative bg-white/5 transform md:-translate-y-4 shadow-[0_0_30px_rgba(167,235,242,0.05)]">
-                    <div
-                        class="absolute top-0 right-0 bg-[#A7EBF2] text-[#011C40] text-xs font-bold px-3 py-1 uppercase tracking-widest">
-                        RECOMMENDED</div>
-                    <div>
-                        <h3 class="text-3xl font-heading mb-2 text-[#A7EBF2]"
-                            style="font-family: 'Playfair Display', serif;">THE ASCENSION</h3>
-                        <p
-                            class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
-                            The Standard.</p>
-                        <p class="text-lg text-gray-300 font-light leading-relaxed">
+                <div class="collection-card featured">
+                    <div class="featured-badge">RECOMMENDED</div>
+                    <div class="collection-card-inner">
+                        <h3 class="collection-card-title featured-title">THE ASCENSION</h3>
+                        <p class="collection-card-subtitle">The Standard.</p>
+                        <p class="collection-card-desc">
                             A complete, multi-page ecosystem that builds deep authority.
                         </p>
-                        <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>3-Page Custom Architecture
-                            </li>
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Interactive Gallery</li>
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Booking Integration</li>
-
+                        <ul class="collection-features">
+                            <li class="feature-item"><span class="feature-dot"></span>3-Page Custom Architecture</li>
+                            <li class="feature-item"><span class="feature-dot"></span>Interactive Gallery</li>
+                            <li class="feature-item"><span class="feature-dot"></span>Booking Integration</li>
                         </ul>
-                        <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Custom Assessment</div>
-                        <button onclick="selectPack('The Ascension')"
-                            class="card-select-btn featured-btn">Inquire</button>
+                        <div class="collection-assessment">Custom Assessment</div>
+                        <button onclick="selectPack('The Ascension')" class="card-select-btn featured-btn">Inquire</button>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div
-                    class="collection-card border border-white/10 p-8 flex flex-col justify-between group bg-[#011C40]">
-                    <div>
-                        <h3 class="text-3xl font-heading mb-2 group-hover:text-[#A7EBF2] transition-colors"
-                            style="font-family: 'Playfair Display', serif;">THE APEX
-                        </h3>
-                        <p
-                            class="text-xs text-gray-400 mb-8 h-10 tracking-[0.2em] border-b border-white/10 pb-4 inline-block">
-                            The Legacy.</p>
-                        <p class="text-lg text-gray-300 font-light leading-relaxed">
+                <div class="collection-card group">
+                    <div class="collection-card-inner">
+                        <h3 class="collection-card-title group-hover">THE APEX</h3>
+                        <p class="collection-card-subtitle">The Legacy.</p>
+                        <p class="collection-card-desc">
                             Total digital dominance. A bespoke partnership acting as your internal team.
                         </p>
-                        <ul class="space-y-4 text-sm text-gray-300 mt-8 mb-8 font-light">
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Multi-Page Systems
-                            </li>
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>CMS Integration</li>
-                            <li class="flex items-center"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-[#A7EBF2] mr-3"></span>Concierge Maintenance</li>
-
+                        <ul class="collection-features">
+                            <li class="feature-item"><span class="feature-dot"></span>Multi-Page Systems</li>
+                            <li class="feature-item"><span class="feature-dot"></span>CMS Integration</li>
+                            <li class="feature-item"><span class="feature-dot"></span>Concierge Maintenance</li>
                         </ul>
-                        <div class="text-[#A7EBF2] font-serif italic text-lg mt-6 block">Bespoke Partnership</div>
+                        <div class="collection-assessment">Bespoke Partnership</div>
                         <button onclick="selectPack('The Apex')" class="card-select-btn">Discuss Your
                             Architecture</button>
                     </div>
@@ -300,8 +251,7 @@
                     <p class="text-gray-300 font-light mb-4">
                         Complex Web Applications, Bespoke E-commerce, or Large-Scale Portals.
                     </p>
-                    <a href="#contact" onclick="clearPack()"
-                        class="text-sm uppercase tracking-widest text-[#A7EBF2] hover:text-white transition-colors border-b border-[#A7EBF2] pb-1">
+                    <a href="#contact" onclick="clearPack()" class="custom-solution-link">
                         Contact for Custom Quote
                     </a>
                 </div>
@@ -312,13 +262,13 @@
 
 
     <!-- NEW Contact Section (Split Layout) -->
-    <section id="contact" class="py-24 px-4 md:px-12 bg-gradient-to-b from-[#011C40] to-black relative">
+    <section id="contact" class="contact-section-wrap">
         <div class="contact-split-container">
 
             <!-- Left Column: Info -->
             <div class="contact-info-col">
-                <h2 style="font-family: 'Playfair Display', serif;">Initiate a Project</h2>
-                <p class="text-gray-400 font-light">
+                <h2 class="contact-title">Initiate a Project</h2>
+                <p class="contact-desc">
                     We are ready to take your business to the next level of digital excellence.
                 </p>
 
@@ -402,8 +352,8 @@
         </div>
     </section>
 
-    <footer class="flex flex-col gap-10 py-16 px-10 text-center bg-[#000510]/90 border-t border-[rgba(167,235,242,0.15)]">
-        <p class="text-[#555555] text-xs font-sans tracking-[0.2em] uppercase">© 2026 AVYR DIGITAL. Engineered and Founded by Salaheddine CHIKHI. All rights reserved.</p>
+    <footer class="footer-wrap">
+        <p class="footer-text">© 2026 AVYR DIGITAL. Engineered and Founded by Salaheddine CHIKHI. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -41,6 +41,8 @@
     color: #ffffff;
 }
 
+.ham
+
 /* Typography headers */
 .manifesto-header {
     text-align: center;
@@ -244,4 +246,20 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin: 0;
+}
+
+/* 5. Mobile Navigation Overrides for Manifesto (Pure Black) */
+@media (max-width: 767px) {
+    .hamburger {
+        background: #000000 !important;
+    }
+    
+    .hamburger:hover {
+        background: #111111 !important;
+    }
+
+    .mobile-menu {
+        background: #000000 !important;
+        backdrop-filter: blur(20px);
+    }
 }

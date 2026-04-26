@@ -1,4 +1,5 @@
 const canvas = document.getElementById('particles-canvas');
+if (canvas) {
         const ctx = canvas.getContext('2d');
 
         let width, height;
@@ -127,6 +128,7 @@ const canvas = document.getElementById('particles-canvas');
         }
 
         animate();
+} // end canvas guard
 
         // Pack Selection Logic
         function clearPack() {
