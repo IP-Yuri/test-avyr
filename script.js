@@ -1,14 +1,12 @@
 const canvas = document.getElementById('particles-canvas');
-if (canvas) {
         const ctx = canvas.getContext('2d');
 
         let width, height;
 
         // Resize canvas to full window size
         function resize() {
-            const heroSection = document.getElementById('hero');
             width = window.innerWidth;
-            height = heroSection.offsetHeight;
+            height = window.innerHeight; // Always cover full viewport
             canvas.width = width;
             canvas.height = height;
         }
@@ -23,9 +21,9 @@ if (canvas) {
                 this.y = Math.random() * height;
                 this.vx = (Math.random() - 0.5) * 0.8; // Increased Speed slightly
                 this.vy = (Math.random() - 0.5) * 0.8;
-                this.size = Math.random() * 3.5 + 2; // Increased Size (was 2 + 1)
-                this.baseColor = 'rgba(168, 237, 242, ';
-                this.opacity = Math.random() * 0.7 + 0.5; // Increased Opacity (was 0.5 + 0.1)
+                this.size = Math.random() * 2 + 1.5; // Slightly larger for better clarity
+                this.baseColor = 'rgba(255, 255, 255, '; // Pure White
+                this.opacity = Math.random() * 0.2 + 0.8; // High opacity: 0.8 to 1.0
                 this.color = this.baseColor + this.opacity + ')';
             }
 
@@ -56,15 +54,19 @@ if (canvas) {
 
             draw() {
                 ctx.fillStyle = this.color;
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#A7EBF2';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
+                // Reset shadow for performance in connection lines
+                ctx.shadowBlur = 0;
             }
         }
 
         // Create Particles
         const particlesArray = [];
-        const numberOfParticles = window.innerWidth < 768 ? 30 : 100; // 30 on mobile, 100 on desktop
+        const numberOfParticles = window.innerWidth < 768 ? 50 : 150; // Denser constellations
 
         for (let i = 0; i < numberOfParticles; i++) {
             particlesArray.push(new Particle());
@@ -113,8 +115,9 @@ if (canvas) {
                     let dy = particlesArray[i].y - particlesArray[j].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 180) { // Increased connection distance
-                        ctx.strokeStyle = 'rgba(167, 235, 242, ' + (1 - distance / 180) * 0.25 + ')'; // Increased line opacity
+                    if (distance < 180) { 
+                        // Brighter Electric Cyan lines with distance-based opacity (up to 0.85)
+                        ctx.strokeStyle = 'rgba(167, 235, 242, ' + (1 - distance / 180) * 0.85 + ')'; 
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
@@ -128,7 +131,6 @@ if (canvas) {
         }
 
         animate();
-} // end canvas guard
 
         // Pack Selection Logic
         function clearPack() {
@@ -152,13 +154,13 @@ if (canvas) {
             contactSection.scrollIntoView({ behavior: 'smooth' });
             packInput.value = packName;
 
-            // Highlight the input temporarily to show it was populated
-            packInput.style.borderColor = '#A7EBF2';
-            packInput.style.boxShadow = '0 0 15px rgba(167, 235, 242, 0.2)';
+            // Highlight the terminal input with the brand cyan glow
+            packInput.style.borderBottomColor = '#00FFFF';
+            packInput.style.boxShadow = '0 10px 30px rgba(0, 255, 255, 0.1)';
             setTimeout(() => {
-                packInput.style.borderColor = '';
+                packInput.style.borderBottomColor = '';
                 packInput.style.boxShadow = '';
-            }, 2000);
+            }, 3000);
         }
         // for mobile menu
        
