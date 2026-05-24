@@ -22,27 +22,64 @@
 
     <meta name="theme-color" content="#000510">
     <title>AVYR Digital | Premium Digital Architecture & UI/UX</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        deepNavy: '#011C40',
-                        cyanAccent: '#A7EBF2',
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                }
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.min.css">
+    <style>
+        :root {
+            --color-canvas: #0A1122;
+            --color-accent: #A7EBF2;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #B0B8C1;
+            --color-overlay: rgba(1, 28, 64, 0.85);
+            --font-headline: 'Didot', 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
         }
-    </script>
+        body {
+            font-family: var(--font-body);
+            background: radial-gradient(circle at 50% 0%, rgba(5, 13, 31, 0.98) 0%, rgba(2, 6, 12, 1) 100%);
+            background-color: #02060C;
+            background-attachment: fixed;
+            color: var(--color-text-primary);
+            overflow-x: hidden;
+            position: relative;
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero-section {
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+            min-height: 600px;
+            width: 100%;
+            position: relative;
+            background-color: transparent;
+        }
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            z-index: 10;
+            padding: 0 1rem;
+        }
+        .hero-headline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(2.25rem, 5vw + 1rem, 5.5rem);
+            line-height: 1.2;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -205,19 +242,35 @@
             <div class="rotating-track">
                 <!-- Card 1 -->
                 <a href="archive.html" class="prototype-card card-1">
-                    <img src="assets/brutt.png" alt="AVYR Prototype 01">
+                    <picture>
+                        <source srcset="assets/brutt.avif" type="image/avif">
+                        <source srcset="assets/brutt.webp" type="image/webp">
+                        <img src="assets/brutt.png" alt="AVYR Prototype 01" loading="lazy" decoding="async">
+                    </picture>
                 </a>
                 <!-- Card 2 -->
                 <a href="archive.html" class="prototype-card card-2">
-                    <img src="assets/xing xing.png" alt="AVYR Prototype 02">
+                    <picture>
+                        <source srcset="assets/xing%20xing.avif" type="image/avif">
+                        <source srcset="assets/xing%20xing.webp" type="image/webp">
+                        <img src="assets/xing xing.png" alt="AVYR Prototype 02" loading="lazy" decoding="async">
+                    </picture>
                 </a>
                 <!-- Card 3 -->
                 <a href="archive.html" class="prototype-card card-3">
-                    <img src="assets/decodar.png" alt="AVYR Prototype 03">
+                    <picture>
+                        <source srcset="assets/decodar.avif" type="image/avif">
+                        <source srcset="assets/decodar.webp" type="image/webp">
+                        <img src="assets/decodar.png" alt="AVYR Prototype 03" loading="lazy" decoding="async">
+                    </picture>
                 </a>
                 <!-- Card 4 -->
                 <a href="archive.html" class="prototype-card card-4">
-                    <img src="assets/kuba.png" alt="AVYR Prototype 04">
+                    <picture>
+                        <source srcset="assets/kuba.avif" type="image/avif">
+                        <source srcset="assets/kuba.webp" type="image/webp">
+                        <img src="assets/kuba.png" alt="AVYR Prototype 04" loading="lazy" decoding="async">
+                    </picture>
                 </a>
             </div>
         </div>
@@ -236,7 +289,11 @@
                 <!-- Card 1: THE GENESIS -->
                 <div class="card-wrapper">
                     <div class="card-cover">
-                        <img src="assets/genesis-symbol.png" alt="Genesis" class="card-symbol-full">
+                        <picture class="card-symbol-full">
+                            <source srcset="assets/genesis-symbol.avif" type="image/avif">
+                            <source srcset="assets/genesis-symbol.webp" type="image/webp">
+                            <img src="assets/genesis-symbol.png" alt="Genesis" class="card-symbol-full" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-overlay-content">
                             <h3 class="text-3xl font-heading tracking-widest text-[#A7EBF2]">GENESIS.</h3>
                             <p class="text-[10px] uppercase tracking-[0.3em] text-white/60">(The spark of identity)</p>
@@ -266,7 +323,11 @@
                 <!-- Card 2: THE ASCENSION (Featured) -->
                 <div class="card-wrapper featured">
                     <div class="card-cover">
-                        <img src="assets/ascension-symbol.png" alt="Ascension" class="card-symbol-full">
+                        <picture class="card-symbol-full">
+                            <source srcset="assets/ascension-symbol.avif" type="image/avif">
+                            <source srcset="assets/ascension-symbol.webp" type="image/webp">
+                            <img src="assets/ascension-symbol.png" alt="Ascension" class="card-symbol-full" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-overlay-content">
                             <h3 class="text-3xl font-heading tracking-widest text-[#A7EBF2]">ASCENSION.</h3>
                             <p class="text-[10px] uppercase tracking-[0.3em] text-white/60">(The scaling of Influence)
@@ -305,7 +366,11 @@
                 <!-- Card 3: THE APEX -->
                 <div class="card-wrapper">
                     <div class="card-cover">
-                        <img src="assets/apex-symbol.png" alt="Apex" class="card-symbol-full">
+                        <picture class="card-symbol-full">
+                            <source srcset="assets/apex-symbol.avif" type="image/avif">
+                            <source srcset="assets/apex-symbol.webp" type="image/webp">
+                            <img src="assets/apex-symbol.png" alt="Apex" class="card-symbol-full" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-overlay-content">
                             <h3 class="text-3xl font-heading tracking-widest text-[#A7EBF2]">APEX.</h3>
                             <p class="text-[10px] uppercase tracking-[0.3em] text-white/60">(The pinnacle of digital
@@ -460,7 +525,7 @@
             reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
 </body>
 
 </html>
